@@ -92,11 +92,12 @@ export function thumbUpPost(cuid, vote) {
 
 export function thumbUpPostRequest(cuid, vote) {
     return (dispatch) => {
+        const count = vote + 1;
         return callApi(`posts/${cuid}`, 'put', {
             post: {
-                voteCount: vote + 1
+                voteCount: count
             }
-        }).then(() => dispatch(thumbUpPost(cuid, vote + 1)));
+        }).then(() => dispatch(thumbUpPost(cuid, count)));
     };
 }
 
@@ -110,10 +111,11 @@ export function thumbDownPost(cuid, vote) {
 
 export function thumbDownPostRequest(cuid, vote) {
     return (dispatch) => {
+        const count = vote - 1;
         return callApi(`posts/${cuid}`, 'put', {
             post: {
-                voteCount: vote - 1
+                voteCount: count
             }
-        }).then(() => dispatch(thumbDownPost(cuid, vote - 1)));
+        }).then(() => dispatch(thumbDownPost(cuid, count)));
     };
 }

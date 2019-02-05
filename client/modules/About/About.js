@@ -4,30 +4,30 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 // Import Style
-// import styles from './Home.css';
+// import styles from './About.css';
 
-class Home extends Component {
-    render() {
-        return (
-            <div>
-                <h2>Hello world!</h2>
-            </div>
-        );
-    }
+class About extends Component {
+  render() {
+    return (
+      <div>
+        <h2>About Hello world!</h2>
+      </div>
+    );
+  }
 }
 
 const mapStateToProps = (state) => {
-    return {};
+  return {};
 };
 
 const mapDispatchToProps = (dispatch) => {
-    return {};
+  return {};
 };
 
-Home.propTypes = {
+About.propTypes = {
 };
 
 export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(Home);
+  mapStateToProps,
+  mapDispatchToProps
+)(About);

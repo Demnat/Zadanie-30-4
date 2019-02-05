@@ -9,6 +9,7 @@ import styles from './App.css';
 import Helmet from 'react-helmet';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
+import Menu from './components/Menu/Menu';
 
 // Import Actions
 import { toggleAddPost } from './AppActions';
@@ -54,14 +55,14 @@ export class App extends Component {
               },
             ]}
           />
+          
           <Header
             switchLanguage={lang => this.props.dispatch(switchLanguage(lang))}
             intl={this.props.intl}
             toggleAddPost={this.toggleAddPostSection}
           />
-          <div className={styles.container}>
-            {this.props.children}
-          </div>
+          <Menu children={this.props.children} />
+          
           <Footer />
         </div>
       </div>
